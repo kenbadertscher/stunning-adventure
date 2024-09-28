@@ -18,7 +18,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "I am flexible with communications across time zones",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -72,11 +72,12 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    title: "Metaversus - Experience Virtual Reality",
+    des: "Explore the wonders of the Metaverse and the internet of the future.",
+    img: "/metaversus.png",  // clean up white space
+    iconLists: ["/re.svg", "/tail.svg", "/next.svg", "/fm.svg"],
+    link: "https://metaversus-amco9n1vk-kenbadertschers-projects.vercel.app/",
+	// tailwind, react, framer motion, next.js, 
   },
   {
     id: 2,
