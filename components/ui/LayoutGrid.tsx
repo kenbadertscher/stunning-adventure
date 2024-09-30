@@ -78,11 +78,11 @@ const BlurImage = ({ card }: { card: Card }) => {
   const [loaded, setLoaded] = useState(false);
   return (
 
-    <img
+    <Image
       src={card.thumbnail}
-      height="100"
-      width="100"
-      onLoad={() => setLoaded(true)}
+      height={100}
+      width={100}
+      onLoadingComplete={() => setLoaded(true)}
       className={cn(
         "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
         loaded ? "blur-none" : "blur-md"

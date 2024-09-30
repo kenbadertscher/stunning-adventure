@@ -74,17 +74,16 @@ export const projects = [
     id: 1,
     title: "Metaversus - Experience Virtual Reality",
     des: "Explore the wonders of the Metaverse and the internet of the future.",
-    img: "/metaversus.png",  // clean up white space
+    img: "/metaversus.png",
     iconLists: ["/re.svg", "/tail.svg", "/next.svg", "/fm.svg"],
-    link: "https://metaversus-amco9n1vk-kenbadertschers-projects.vercel.app/",
-	// tailwind, react, framer motion, next.js, 
+    link: "https://ken-metaverse.vercel.app/",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
+    title: "Xora - AI Video and Photo Editing SaaS",
     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    img: "/Xora.png",
+    iconLists: ["/re.svg", "/next.svg", "/tail.svg", "/vercel.svg"],
     link: "/ui.yoom.com",
   },
   {
