@@ -44,13 +44,26 @@ const Hero = () => {
             Hi! I&apos;m Ken, a Next.js Developer based in Boston.
           </p>
 
-          <a href="#about">
+          <div
+            onClick={() => {
+              const element = document.getElementById('projects');
+              if (element) {
+                const navbarHeight = 80;
+                const elementPosition = element.offsetTop - navbarHeight;
+                window.scrollTo({
+                  top: elementPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }}
+            className="cursor-pointer"
+          >
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
             />
-          </a>
+          </div>
         </div>
       </div>
     </div>
