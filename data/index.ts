@@ -76,7 +76,7 @@ export const projects = [
     des: "Explore the wonders of the Metaverse and the internet of the future.",
     img: "/Metaversus.png",
     iconLists: ["/re.svg", "/tail.svg", "/next.svg", "/fm.svg"],
-    link: "https://ken-metaverse.vercel.app/",
+    link: "https://metaversus.kenbadertscher.com",
   },
   {
     id: 2,
