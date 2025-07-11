@@ -84,7 +84,7 @@ export const projects = [
     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
     img: "/Xora.png",
     iconLists: ["/re.svg", "/next.svg", "/tail.svg", "/vercel.svg"],
-    link: "/ui.yoom.com",
+    link: "https://xora.kenbadertscher.com/",
   },
   {
     id: 3,
