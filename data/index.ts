@@ -74,7 +74,7 @@ export const projects = [
     id: 1,
     title: "Metaversus - Experience Virtual Reality",
     des: "Explore the wonders of the Metaverse and the internet of the future.",
-    img: "/metaversus.png",
+    img: "/Metaversus.png",
     iconLists: ["/re.svg", "/tail.svg", "/next.svg", "/fm.svg"],
     link: "https://ken-metaverse.vercel.app/",
   },
