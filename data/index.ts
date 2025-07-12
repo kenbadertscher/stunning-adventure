@@ -76,7 +76,7 @@ export const projects = [
     des: "Explore the wonders of the Metaverse and the internet of the future.",
     img: "/Metaversus.png",
     iconLists: ["/re.svg", "/tail.svg", "/next.svg", "/fm.svg"],
-    link: "https://metaversus.kenbadertscher.com",
+    link: "https://metaversus.KenB.dev",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const projects = [
     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
     img: "/Xora.png",
     iconLists: ["/re.svg", "/next.svg", "/tail.svg", "/vercel.svg"],
-    link: "https://xora.kenbadertscher.com/",
+    link: "https://xora.KenB.dev",
   },
   {
     id: 3,
@@ -92,15 +92,15 @@ export const projects = [
     des: "A modern and fully responsive blog website created with ReactJS from a Figma template, showcasing the Block-Element-Modifier (BEM) CSS methodology.",
     img: "/gptken.png",
     iconLists: ["/re.svg", "/figma-logo.svg"],
-    link: "/ui.aiimg.com",
+    link: "https://gptken.KenB.dev",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    title: "Yariga - Real Estate Dashboard",
+    des: "A full stack MERN dashboard website supporting CRUD operations, authentication, and authorization.",
+    img: "/Yariga.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],  // TODO: add correct icons for MERN stack and google oauth
+    link: "https://yariga.KenB.dev",
   },
 ];
 
