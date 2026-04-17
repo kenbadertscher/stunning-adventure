@@ -64,7 +64,16 @@ export const BentoGridItem = ({
 
   const handleCopy = () => {
     const text = "Ken@KenB.dev";
-    navigator.clipboard.writeText(text);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+    } else {
+      const el = document.createElement("textarea");
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+    }
     setCopied(true);
   };
 
