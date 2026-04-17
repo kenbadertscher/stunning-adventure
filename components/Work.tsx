@@ -5,7 +5,7 @@ const projects = [
     description:
       "A public reference tool for Massachusetts General Laws. Full-stack Next.js with Clerk auth, full-text search, law section browsing, memos, and CMR document management.",
     tags: ["Next.js", "PostgreSQL", "Clerk", "TypeScript"],
-    link: "https://chapter32.kenb.dev",
+    link: "https://chapter32.com",
     status: "live" as const,
   },
   {
