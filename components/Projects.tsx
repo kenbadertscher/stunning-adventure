@@ -12,8 +12,8 @@ export default function Projects() {
             made searchable.
           </>
         }
-        description="Chapter 32 is a public reference tool for Massachusetts General Laws. Full-stack Next.js with Clerk auth, full-text search across law sections, memo tracking, and CMR document browsing — built to make dense public legal code actually usable."
-        cta={{ text: "Visit Chapter32", href: "https://chapter32.com" }}
+        description="Chapter 32 Wiki is a public reference tool for Massachusetts General Laws. Full-stack Next.js with Clerk auth, full-text search across law sections, memo tracking, and CMR document browsing — built to make dense public legal code actually usable."
+        cta={{ text: "Visit Chapter32.com", href: "https://chapter32.com" }}
         primaryImageSrc="/chapter32-mockup.png"
         secondaryImageSrc="/chapter32-bg.png"
         background="#ffffff"
