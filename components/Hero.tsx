@@ -1,73 +1,121 @@
-import { FaLocationArrow } from "react-icons/fa6";
+"use client";
 
-import MagicButton from "./MagicButton";
-import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import React, { useRef } from "react";
+import {
+  motion,
+  useMotionValue,
+  useMotionTemplate,
+  useAnimationFrame,
+} from "framer-motion";
 
-const Hero = () => {
-  return (
-    <div className="pb-20 pt-36">
-      <div>
-        <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="white"
-        />
-        <Spotlight
-          className="h-[80vh] w-[50vw] top-10 left-full"
-          fill="purple"
-        />
-        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
-      </div>
-
-      <div
-        className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
-       absolute top-0 left-0 flex items-center justify-center"
+const GridPattern = ({ offsetX, offsetY }: { offsetX: any; offsetY: any }) => (
+  <svg className="w-full h-full">
+    <defs>
+      <motion.pattern
+        id="grid-pattern"
+        width="40"
+        height="40"
+        patternUnits="userSpaceOnUse"
+        x={offsetX}
+        y={offsetY}
       >
-        <div
-          className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
-         bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+        <path
+          d="M 40 0 L 0 0 0 40"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          className="text-zinc-900"
         />
+      </motion.pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+  </svg>
+);
+
+export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const gridOffsetX = useMotionValue(0);
+  const gridOffsetY = useMotionValue(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top } = e.currentTarget.getBoundingClientRect();
+    mouseX.set(e.clientX - left);
+    mouseY.set(e.clientY - top);
+  };
+
+  useAnimationFrame(() => {
+    gridOffsetX.set((gridOffsetX.get() + 0.3) % 40);
+    gridOffsetY.set((gridOffsetY.get() + 0.3) % 40);
+  });
+
+  const maskImage = useMotionTemplate`radial-gradient(350px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
+
+  return (
+    <section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative min-h-screen flex items-center justify-start overflow-hidden"
+      style={{ backgroundColor: "#FAF8F5" }}
+    >
+      {/* Base dim grid */}
+      <div className="absolute inset-0 z-0 opacity-[0.04]">
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with modern tech
+      {/* Cursor-reveal bright grid */}
+      <motion.div
+        className="absolute inset-0 z-0 opacity-30"
+        style={{ maskImage, WebkitMaskImage: maskImage }}
+      >
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
+      </motion.div>
+
+      {/* Orange glow — top right */}
+      <div className="absolute right-[-5%] top-[-10%] w-[45%] h-[45%] rounded-full bg-orange-400/20 blur-[120px] pointer-events-none z-0" />
+      {/* Warm secondary glow */}
+      <div className="absolute right-[25%] top-[15%] w-[20%] h-[20%] rounded-full bg-orange-300/15 blur-[80px] pointer-events-none z-0" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24 w-full">
+        <div className="max-w-3xl">
+          <p className="text-sm font-medium tracking-widest uppercase text-zinc-400 mb-8">
+            Available for select projects
           </p>
 
-          <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8 text-zinc-900">
+            I build software
+            <br />
+            that{" "}
+            <span style={{ color: "#FF5500" }}>actually ships.</span>
+          </h1>
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Ken, a web developer based in Boston.
+          <p className="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-12">
+            Full-stack developer working across JavaScript, Python, and whatever
+            the job demands. I lean heavily on AI tooling — not as a gimmick, but
+            to move faster and build smarter. By day, enterprise pension systems.
+            By night, SaaS products and open tools.
           </p>
 
-          <div
-            onClick={() => {
-              const element = document.getElementById('projects');
-              if (element) {
-                const navbarHeight = 80;
-                const elementPosition = element.offsetTop - navbarHeight;
-                window.scrollTo({
-                  top: elementPosition,
-                  behavior: 'smooth'
-                });
-              }
-            }}
-            className="cursor-pointer"
-          >
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="mailto:ken@kenb.dev"
+              className="inline-flex items-center justify-center h-12 px-8 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
+              style={{ backgroundColor: "#FF5500" }}
+            >
+              Get in touch
+            </a>
+            <a
+              href="#work"
+              className="inline-flex items-center justify-center h-12 px-8 rounded-lg text-sm font-semibold border border-zinc-200 text-zinc-700 hover:bg-zinc-100 transition-all"
+            >
+              See my work
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Hero;
+}

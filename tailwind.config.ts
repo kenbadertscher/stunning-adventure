@@ -26,7 +26,18 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-display)", "sans-serif"],
+      },
       colors: {
+        orange: {
+          DEFAULT: "#FF5500",
+          50: "#FFF0E8",
+          100: "#FFD9C2",
+          500: "#FF5500",
+          600: "#E04D00",
+        },
         black: {
           DEFAULT: "#000",
           100: "#000319",
