@@ -94,7 +94,7 @@ export default function Hero() {
 
           <p className="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-12">
             Full-stack developer working across JavaScript, Python, and whatever
-            the job demands. I lean into AI tooling — not as a gimmick, but
+            the job demands. I lean into AI tooling
             to move faster and build smarter. By day, enterprise pension systems.
             By night, SaaS products and open tools.
           </p>
