@@ -20,6 +20,23 @@ export default function Projects() {
       />
 
       <SectionWithMockup
+        label="GovTech SaaS"
+        title={
+          <>
+            Public retirement boards,
+            <br />
+            modernized.
+          </>
+        }
+        description="Boardsites is a multi-tenant CMS purpose-built for Massachusetts' ~104 public retirement boards. Each board gets its own custom domain, an accessibility-compliant public site, and a working/live editing model — so administrators can preview every change before it goes public."
+        cta={{ text: "Visit BoardSites.app", href: "https://boardsites.app" }}
+        primaryImageSrc="/boardsites-mockup.png"
+        secondaryImageSrc="/boardsites-bg.png"
+        reverseLayout
+        background="#F1F4F8"
+      />
+
+      <SectionWithMockup
         label="SaaS Platform"
         title={
           <>
@@ -31,7 +48,6 @@ export default function Projects() {
         description="ArborSite Pro bundles a marketing site, SEO blog, and Stripe-powered customer portal into a single subscription product for tree service and landscaping companies. Customers can view invoices, track upcoming jobs, and pay — all without calling the office."
         primaryImageSrc="/arborsite-mockup.png"
         secondaryImageSrc="/arborsite-bg.png"
-        reverseLayout
         background="#FAF8F5"
       />
     </div>
